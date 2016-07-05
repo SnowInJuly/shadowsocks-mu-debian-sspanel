@@ -41,6 +41,15 @@ autorestart=true
 user=root
 EOF
 
+cat >>/etc/supervisor/conf.d/ssshell.conf<< EOF
+[program:ssshell]
+command=java -jar ssshell.jar
+directory=/root/ssshell
+autostart=true
+autorestart=true
+user=root
+EOF
+
 apt-get -y install libpcap*
 cd /lib64
 wget https://github.com/glzjin/ssshell-jar/raw/master/libjnetpcap.so
