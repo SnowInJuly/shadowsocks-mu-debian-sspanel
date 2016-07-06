@@ -11,9 +11,6 @@ echo "# Thanks: @zd423 <http://zdfans.com>                        #"
 echo "#############################################################"
 echo
 
-    echo "Press any key to start...or Press Ctrl+C to cancel"
-    char=`get_char`
-	
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install python-pip m2crypto git vim
@@ -69,10 +66,10 @@ sudo apt-get update
 sudo apt-get install oracle-java8-installer
 
 cat >>/etc/security/limits.conf<< EOF
-* soft nofile  512000
+* soft nofile 512000
 * hard nofile 1024000
 * soft nproc 512000
-* hard nproc 512000
+* hard nproc 1024000
 EOF
 
 cat >>/etc/sysctl.conf<<EOF
